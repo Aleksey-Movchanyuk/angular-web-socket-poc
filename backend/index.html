@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Web Socket Server</title>
+        <script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            var socket = io.connect('http://127.0.0.1:5000');
+
+            socket.on('connect', function() {
+                socket.send('User has connected!!');
+            });
+
+            $('#sendSilentMessage').on('click', function() {
+                socket.send($('#silentMessageInput').val());
+                $('#silentMessageInput').val('');
+            });
+
+            $('#sendLoudMessage').on('click', function() {
+                socket.send($('#loudMessageInput').val());
+                $('#loudMessageInput').val('');
+            });            
+
+        });
+        </script>
+
+        <table style="width:100%">
+            <tr>
+                <th>Silent Message</th>
+                <th>Loud Message</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul id="silentMessage"></ul>
+                    <input type="text" id="silentMessageInput">
+                    <button id="sendSilentMessage">Send silent message</button>
+                </td>
+                <td>
+                    <ul id="loudMessage"></ul>
+                    <input type="text" id="loudMessageInput">
+                    <button id="loudSilentMessage">Send loud message</button>
+                </td>
+            </tr>
+        </table>
+
+
+    </body>
+</html>

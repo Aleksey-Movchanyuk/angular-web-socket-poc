@@ -1,0 +1,30 @@
+.mat-card-title {
+    margin-left: -16px;
+  }
+
+.notifications {
+    padding: 15px 15px 15px 15px;
+}
+
+.notification-card {
+    margin-top: 9px;
+}
+
+.notification-card-title {
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+}
+
+.notification-card-description {
+    font-size: small;
+    color: gray;
+}
+
+.blue-icon {
+    color: lightblue;
+}
+
+.red-icon {
+    color: pink;
+}
