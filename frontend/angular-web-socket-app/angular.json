@@ -123,6 +123,10 @@
               "devServerTarget": "angular-web-socket-app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
